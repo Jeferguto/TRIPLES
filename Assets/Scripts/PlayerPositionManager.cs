@@ -45,7 +45,7 @@ public class PlayerPositionManager : MonoBehaviour
         playerPositions[0] = new PlayerPosition
         {
             playerNumber = 1,
-            cameraPosition = new Vector3(0f, 2f, 3f),
+            cameraPosition = new Vector3(0f, 3f, 3f),
             cameraRotation = new Vector3(0f, 180f, 0f),  // Mirando hacia la mesa
             handPosition = new Vector3(0f, 0.5f, 2.5f),
             playerName = "Jugador 1 (Norte)"
@@ -55,7 +55,7 @@ public class PlayerPositionManager : MonoBehaviour
         playerPositions[1] = new PlayerPosition
         {
             playerNumber = 2,
-            cameraPosition = new Vector3(3f, 2f, 0f),
+            cameraPosition = new Vector3(3f, 3f, 0f),
             cameraRotation = new Vector3(0f, 270f, 0f), // Mirando hacia la mesa
             handPosition = new Vector3(2.5f, 0.5f, 0f),
             playerName = "Jugador 2 (Este)"
@@ -65,7 +65,7 @@ public class PlayerPositionManager : MonoBehaviour
         playerPositions[2] = new PlayerPosition
         {
             playerNumber = 3,
-            cameraPosition = new Vector3(0f, 2f, -3f),
+            cameraPosition = new Vector3(0f, 3f, -3f),
             cameraRotation = new Vector3(0f, 0f, 0f),  // Mirando hacia la mesa
             handPosition = new Vector3(0f, 0.5f, -2.5f),
             playerName = "Jugador 3 (Sur)"
@@ -75,7 +75,7 @@ public class PlayerPositionManager : MonoBehaviour
         playerPositions[3] = new PlayerPosition
         {
             playerNumber = 4,
-            cameraPosition = new Vector3(-3f, 2f, 0f),
+            cameraPosition = new Vector3(-3f, 3f, 0f),
             cameraRotation = new Vector3(0f, 90f, 0f),  // Mirando hacia la mesa
             handPosition = new Vector3(-2.5f, 0.5f, 0f),
             playerName = "Jugador 4 (Oeste)"
