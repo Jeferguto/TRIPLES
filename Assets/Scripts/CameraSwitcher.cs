@@ -32,6 +32,14 @@ public class CameraSwitcher : MonoBehaviour
 
     public void SwitchTo(int playerNumber)
     {
+        positionManager ??= PlayerPositionManager.Instance;
+
+        if (positionManager == null)
+        {
+            Debug.LogWarning("CameraSwitcher: PlayerPositionManager.Instance is null.");
+            return;
+        }
+
         var pos = positionManager.GetPlayerPosition(playerNumber);
         if (pos == null) return;
 
