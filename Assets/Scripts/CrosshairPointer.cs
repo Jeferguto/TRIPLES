@@ -17,6 +17,7 @@ public class CrosshairPointer : MonoBehaviour
 
     private Camera cam;
     private IInteractable currentTarget;
+    private Outline currentOutline;
     private Vector3 defaultScale;
 
     private void Awake()
@@ -63,7 +64,19 @@ public class CrosshairPointer : MonoBehaviour
 
     private void SetHover(IInteractable target)
     {
+        if (target == currentTarget) return;
+
+        ClearHover();
+
         currentTarget = target;
+
+        var mono = target as MonoBehaviour;
+        if (mono != null)
+        {
+            currentOutline = mono.GetComponentInChildren<Outline>();
+            if (currentOutline != null) currentOutline.enabled = true;
+        }
+
         if (crosshairImage == null) return;
         crosshairImage.color = hoverColor;
         crosshairImage.transform.localScale = defaultScale * hoverScale;
@@ -71,6 +84,12 @@ public class CrosshairPointer : MonoBehaviour
 
     private void ClearHover()
     {
+        if (currentOutline != null)
+        {
+            currentOutline.enabled = false;
+            currentOutline = null;
+        }
+
         currentTarget = null;
         if (crosshairImage == null) return;
         crosshairImage.color = defaultColor;
